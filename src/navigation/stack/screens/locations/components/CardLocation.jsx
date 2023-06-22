@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import { removeLocation, removeLocationDb } from '../../../../../store/slices/LocationSlice';
 import { deleteToLocalDb } from '../../../../../db';
 import { deletePictureInFileSystem } from '../../../../../services/RenameAndSavePicture';
-import coustomImage from '../../../../../assets/coustom_image.png'
+import coustomImage from '../../../../../assets/coustom_image.jpg'
 import { Linking } from 'react-native';
 
 const CardLocation = ({ item, navigateToDetail, setIsModalVisible, setSelectedItem }) => {

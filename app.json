@@ -1,15 +1,19 @@
 {
   "expo": {
-    "name": "App_3",
-    "slug": "App_3",
+    "name": "Park Here",
+    "slug": "park-here",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
+    "platforms": [
+      "ios",
+      "android"
+    ],
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "resizeMode": "cover",
+      "backgroundColor": "#000000"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -18,6 +22,8 @@
       "supportsTablet": true
     },
     "android": {
+      "versionCode": 1,
+      "package": "com.mathiasfernandez24.App_3",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
@@ -25,6 +31,18 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "71e6c855-cb0f-4d00-b9ec-906ed422a606"
+      }
+    },
+    "owner": "mathiasfernandez24",
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/71e6c855-cb0f-4d00-b9ec-906ed422a606"
     }
   }
 }

@@ -1,7 +1,7 @@
 import { Button, Image, Linking, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { COLORS } from '../../../../theme/Colors';
-import coustomImage from '../../../../assets/coustom_image.png'
+import coustomImage from '../../../../assets/coustom_image.jpg'
 import MapView, { Marker } from 'react-native-maps';
 
 const DetailLocation = ({ route }) => {
