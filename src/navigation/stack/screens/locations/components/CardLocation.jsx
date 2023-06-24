@@ -3,14 +3,10 @@ import React from 'react'
 import { COLORS } from '../../../../../theme/Colors'
 import { AntDesign } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
-import { useDispatch } from 'react-redux';
-import { removeLocation, removeLocationDb } from '../../../../../store/slices/LocationSlice';
-import { deleteToLocalDb } from '../../../../../db';
-import { deletePictureInFileSystem } from '../../../../../services/RenameAndSavePicture';
 import coustomImage from '../../../../../assets/coustom_image.jpg'
 import { Linking } from 'react-native';
 
-const CardLocation = ({ item, navigateToDetail, setIsModalVisible, setSelectedItem }) => {
+const CardLocation = ({ item, navigation, setIsModalVisible, setSelectedItem }) => {
 
     const deleteLocationButton = async () => {
         setSelectedItem(item)
@@ -27,8 +23,8 @@ const CardLocation = ({ item, navigateToDetail, setIsModalVisible, setSelectedIt
         Linking.openURL(url);
     }
 
-    const navigateToDetailButton = () => {
-        navigateToDetail(item)
+    const navigateToDetail = () => {
+        navigation.navigate('detail location', { item })
     }
 
     return (
@@ -39,7 +35,7 @@ const CardLocation = ({ item, navigateToDetail, setIsModalVisible, setSelectedIt
                 <Text style={styles.date}>{item.fecha}</Text>
             </View>
             <View style={styles.containerButtons}>
-                <Feather name="list" size={34} color="black" onPress={navigateToDetailButton} />
+                <Feather name="list" size={34} color="black" onPress={navigateToDetail} />
                 <AntDesign style={{}} name="delete" size={34} color="black" onPress={deleteLocationButton} />
             </View>
         </TouchableOpacity>

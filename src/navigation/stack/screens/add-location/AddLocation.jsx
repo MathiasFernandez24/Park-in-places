@@ -1,9 +1,9 @@
-import { Alert, Image, Keyboard, ScrollView, StyleSheet, Text, TextInput, TouchableWithoutFeedback, View } from 'react-native'
+import { Alert, Image, Keyboard, StyleSheet, Text, TextInput, TouchableWithoutFeedback, View } from 'react-native'
 import React, { useState } from 'react'
 import { COLORS } from '../../../../theme/Colors'
 import MyButton from './components/MyButton'
 import { useDispatch } from 'react-redux'
-import { addLocation, addLocationDb } from '../../../../store/slices/LocationSlice'
+import { addLocationDb } from '../../../../store/slices/LocationSlice'
 import * as ImagePicker from 'expo-image-picker'
 import * as Location from 'expo-location';
 import { renameAndSavePicture } from '../../../../services/RenameAndSavePicture'

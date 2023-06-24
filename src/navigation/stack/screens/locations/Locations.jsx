@@ -29,7 +29,7 @@ const Locations = ({ navigation }) => {
     const renderItem = (i) => (
         <CardLocation
             key={i.id}
-            navigateToDetail={navigateToDetail}
+            navigation={navigation}
             item={i.item}
             setIsModalVisible={setIsModalVisible}
             setSelectedItem={setSelectedItem}

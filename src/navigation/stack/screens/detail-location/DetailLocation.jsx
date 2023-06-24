@@ -1,4 +1,4 @@
-import { Button, Image, Linking, StyleSheet, Text, View } from 'react-native'
+import { Image, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { COLORS } from '../../../../theme/Colors';
 import coustomImage from '../../../../assets/coustom_image.jpg'
@@ -19,7 +19,7 @@ const DetailLocation = ({ route }) => {
                     <Text>Longitud: {item.latitude}</Text>
                     <Text>Latitud: {item.longitude}</Text>
                 </View>
-                <View style={{ height: screenWidth, width: screenWidth, ...styles.mapContainer }}>
+                <View style={{ height: screenWidth, ...styles.mapContainer }}>
                     <MapView
                         style={{ height: screenWidth, width: screenWidth }}
                         initialRegion={{
@@ -39,7 +39,7 @@ const DetailLocation = ({ route }) => {
                     </MapView>
                 </View>
                 <Image
-                    style={{ resizeMode: 'contain', width: screenWidth, height: screenWidth }}
+                    style={{ resizeMode: 'contain', width: screenWidth, height: screenWidth, marginTop: 5 }}
                     source={item.image ? { uri: item.image } : coustomImage}
                     resizeMode='contain'
                 />
@@ -54,17 +54,18 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: COLORS.tertiary,
-        // padding: 30,
+        padding: 5,
     },
     image: {
 
     },
     mapContainer: {
-        margin: 5,
+        // padding: 5,
         borderWidth: 1,
         borderColor: 'black',
         borderRadius: 30,
-        overflow: 'hidden'
+        overflow: 'hidden',
+        width: '100%'
 
     },
     title: {
