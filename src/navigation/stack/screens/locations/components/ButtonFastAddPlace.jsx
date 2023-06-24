@@ -34,7 +34,9 @@ const ButtonFastAddPlace = () => {
 
         const isLocationOk = await verifyPermissionsLocation()
         if (!isLocationOk) return
+        console.log("OK -permisos");
         const locationCoords = await Location.getCurrentPositionAsync({});
+        console.log("OK -ubicacion");
         const locationGps = {
             latitude: locationCoords.coords.latitude,
             longitude: locationCoords.coords.longitude
@@ -59,7 +61,7 @@ const ButtonFastAddPlace = () => {
 
 
     return (
-        <TouchableOpacity style={isDisabled ? styles.buttonDisabled : styles.buttonActive} disabled={isDisabled} onPress={addFastLocation}>
+        <TouchableOpacity style={isDisabled ? styles.buttonDisabled : styles.buttonActive} disabled={false} onPress={addFastLocation}>
 
             <MaterialCommunityIcons name="car-brake-parking" size={150} color="black" />
             {

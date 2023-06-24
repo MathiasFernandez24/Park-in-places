@@ -1,6 +1,6 @@
 import * as SQLite from 'expo-sqlite'
 
-const db = SQLite.openDatabase('address.db');
+const db = SQLite.openDatabase('addres.db');
 
 export const init = () => {
     console.log("OK -Ingresa al Init de db")

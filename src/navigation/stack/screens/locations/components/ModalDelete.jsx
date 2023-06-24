@@ -25,8 +25,8 @@ const ModalDelete = ({ isModalVisible, setIsModalVisible, item }) => {
             <View style={styles.modalCard}>
                 <Text style={styles.title}>Eliminar de forma permanente?</Text>
                 <View style={styles.buttonContainer}>
-                    <MyModalButton title={"Borrar"} onPress={onHandleDelete} />
                     <MyModalButton title={"Cancelar"} onPress={onHandleCancel} />
+                    <MyModalButton title={"Borrar"} onPress={onHandleDelete} />
                 </View>
             </View>
         </Modal>

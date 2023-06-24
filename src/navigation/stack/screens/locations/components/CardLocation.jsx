@@ -2,6 +2,7 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { COLORS } from '../../../../../theme/Colors'
 import { AntDesign } from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
 import { useDispatch } from 'react-redux';
 import { removeLocation, removeLocationDb } from '../../../../../store/slices/LocationSlice';
 import { deleteToLocalDb } from '../../../../../db';
@@ -24,16 +25,23 @@ const CardLocation = ({ item, navigateToDetail, setIsModalVisible, setSelectedIt
     const iniciarNavegacionACoordenadas = () => {
         const url = `https://www.google.com/maps/dir/?api=1&destination=${parseFloat(item.latitude)},${parseFloat(item.longitude)}&travelmode=walking`;
         Linking.openURL(url);
-    };
+    }
+
+    const navigateToDetailButton = () => {
+        navigateToDetail(item)
+    }
 
     return (
-        <TouchableOpacity style={styles.container} onLongPress={() => navigateToDetail(item)} onPress={iniciarNavegacionACoordenadas}>
+        <TouchableOpacity style={styles.container} onLongPress={navigateToDetail} onPress={iniciarNavegacionACoordenadas}>
             <Image style={styles.image} source={item.image ? { uri: item.image } : coustomImage} />
-            <View>
-                <Text>{item.title}</Text>
-                <Text>{item.fecha}</Text>
+            <View style={styles.containerText}>
+                <Text style={styles.title}>{item.title}</Text>
+                <Text style={styles.date}>{item.fecha}</Text>
             </View>
-            <AntDesign name="delete" size={34} color="black" onPress={deleteLocationButton} />
+            <View style={styles.containerButtons}>
+                <Feather name="list" size={34} color="black" onPress={navigateToDetailButton} />
+                <AntDesign style={{}} name="delete" size={34} color="black" onPress={deleteLocationButton} />
+            </View>
         </TouchableOpacity>
     )
 }
@@ -67,6 +75,23 @@ const styles = StyleSheet.create({
         height: 50,
         borderRadius: 5,
         resizeMode: 'cover'
-    }
+    },
+    containerButtons: {
+        flexDirection: 'row',
+        gap: 16
+    },
+    containerText: {
+        flex: 1,
+        marginHorizontal: 12,
+    },
+    title: {
+        fontSize: 16
+    },
+    date: {
+        fontWeight: 'bold',
+        textDecorationLine: 'underline',
+        alignSelf: 'flex-end',
+        paddingRight: 10,
+    },
 
 })
